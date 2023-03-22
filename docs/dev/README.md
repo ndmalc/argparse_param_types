@@ -1,8 +1,28 @@
-# Dev guide for argparese_param_types
+# Dev guide for argparse_param_types
+## Development requirements on project
+When contributing to the project, there are several requirements that applies to ensure code consistency and code quality. The requirements are ase follow:
+- Code style follows PEP8
+  - Using `black` and `isort`
+- Documentation is done with docstrings restructuredtext
+- Type hinting is provided
+- Only supports Python3
+
 ## How to package the project
 ### Dependencies
 ```
-pip install build twine
+pip install build twine black flake8 flake8-import-order isort
+```
+
+### Style checks
+```
+black --check --line-length 79 --target-version py310 .
+flake8
+```
+
+### Auto format
+```
+black --line-length 79 --target-version py310 .
+isort --profile black -l 79 .
 ```
 
 ### Build & upload
