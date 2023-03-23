@@ -18,11 +18,40 @@ pip install argparse_param_types
 
 ### directory_type
 
+### host_type
+
+### ip_type
+
+### rawip_type
+
+### ip4_type
+
+### rawip4_type
+
+### ip6_type
+
+### rawip6_type
+
+### net_type
+
+### rawnet_type
+
+### net4_type
+
+### rawnet4_type
+
+### net6_type
+
+### rawnet6_type
+
+### port_type
+
 ## Changelog
 
 - Refactor to be PEP8 compliant, improve/add documentation, add type hinting
 - Add easy import from module \_\_init__
 - Add .gitignore to project
+- Add param type host_type & ip_type & rawip_type & ip4_type & rawip4_type & ip6_type & rawip6_type & net_type & rawnet_type & net4_type & rawnet4_type & net6_type & rawnet6_type & port_type
 
 #### 0.0.1
 - Initial commit

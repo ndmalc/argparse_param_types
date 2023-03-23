@@ -21,3 +21,8 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/ndmalc/argparse_param_types"
 "Bug Tracker" = "https://github.com/ndmalc/argparse_param_types/issues"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]

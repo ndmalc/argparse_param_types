@@ -25,6 +25,12 @@ black --line-length 79 --target-version py310 .
 isort --profile black -l 79 .
 ```
 
+### Run unit tests
+```
+pip install -e .
+pytest
+```
+
 ### Build & upload
 #### Production environment
 ```
