@@ -72,7 +72,7 @@ def host_type(val: str, message: str = "Provided host is not valid ({val}).", lo
 
     try:
         ip_type(val, logs=False)
-    except Exception as e:
+    except argparse.ArgumentTypeError as e:
         if not regex.match(domain_regex, val):
             message = message.format(val=val)
             if logs:
@@ -218,13 +218,13 @@ def rawnet_type(val: str, message: str = "Provided network is not valid ({val}).
 
     try:
         ip_type(val, logs=False)
-    except Exception as e:
+    except argparse.ArgumentTypeError as e:
         return val
 
     try:
         ip4_type(val, logs=False)
         return f"{val}/32"
-    except Exception as e:
+    except argparse.ArgumentTypeError as e:
         return f"{val}/128"
 
 
@@ -262,7 +262,7 @@ def rawnet4_type(val: str, message: str = "Provided network is not a valid IPv4 
     try:
         ip4_type(val, logs=False)
         return f"{val}/32"
-    except Exception as e:
+    except argparse.ArgumentTypeError as e:
         return val
 
 
@@ -300,7 +300,7 @@ def rawnet6_type(val: str, message: str = "Provided network is not a valid IPv6 
     try:
         ip6_type(val, logs=False)
         return f"{val}/128"
-    except Exception as e:
+    except argparse.ArgumentTypeError as e:
         return val
 
 
