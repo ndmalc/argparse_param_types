@@ -48,6 +48,8 @@ pip install argparse_param_types
 
 ## Changelog
 
+- Add missing dependencies in pyproject (dependencies not automatically installed when pip install)
+
 #### 0.0.2
 - Refactor to be PEP8 compliant, improve/add documentation, add type hinting
 - Add easy import from module \_\_init__

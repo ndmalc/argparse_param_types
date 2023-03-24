@@ -17,10 +17,20 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+    "regex",
+    "ipaddress",
+]
 
 [project.urls]
 "Homepage" = "https://github.com/ndmalc/argparse_param_types"
 "Bug Tracker" = "https://github.com/ndmalc/argparse_param_types/issues"
+
+[project.optional-dependencies]
+tests = [
+    "pytest",
+    "pyfakefs",
+]
 
 [tool.pytest.ini_options]
 addopts = [
