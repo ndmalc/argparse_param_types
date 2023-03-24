@@ -48,6 +48,7 @@ pip install argparse_param_types
 
 ## Changelog
 
+#### 0.0.3
 - Add missing dependencies in pyproject (dependencies not automatically installed when pip install)
 - Add a `logs` flag on each param type to allow function nesting without erroneous error logging
 - Bug fix: Do not log error when param_type function is used as a test in a success scenario
