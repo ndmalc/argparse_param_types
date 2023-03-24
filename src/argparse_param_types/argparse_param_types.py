@@ -71,7 +71,7 @@ def host_type(val: str, message: str = "Provided host is not valid ({val}).", lo
     domain_regex = "^(?!.*?_.*?)(?!(?:[\w]+?\.)?\-[\w\.\-]*?)(?![\w]+?\-\.(?:[\w\.\-]+?))(?=[\w])(?=[\w\.\-]*?\.+[\w\.\-]*?)(?![\w\.\-]{254})(?!(?:\.?[\w\-\.]*?[\w\-]{64,}\.)+?)[\w\.\-]+?(?<![\w\-\.]*?\.[\d]+?)(?<=[\w\-]{2,})(?<![\w\-]{25})$"
 
     try:
-        ip_type(val)
+        ip_type(val, logs=False)
     except Exception as e:
         if not regex.match(domain_regex, val):
             message = message.format(val=val)
@@ -217,12 +217,12 @@ def rawnet_type(val: str, message: str = "Provided network is not valid ({val}).
     net_type(val, message, logs)
 
     try:
-        ip_type(val, logs=logs)
+        ip_type(val, logs=False)
     except Exception as e:
         return val
 
     try:
-        ip4_type(val, logs=logs)
+        ip4_type(val, logs=False)
         return f"{val}/32"
     except Exception as e:
         return f"{val}/128"
@@ -260,7 +260,7 @@ def rawnet4_type(val: str, message: str = "Provided network is not a valid IPv4 
     net4_type(val, message, logs)
 
     try:
-        ip4_type(val, logs=logs)
+        ip4_type(val, logs=False)
         return f"{val}/32"
     except Exception as e:
         return val
@@ -298,7 +298,7 @@ def rawnet6_type(val: str, message: str = "Provided network is not a valid IPv6 
     net6_type(val, message, logs)
 
     try:
-        ip6_type(val, logs=logs)
+        ip6_type(val, logs=False)
         return f"{val}/128"
     except Exception as e:
         return val
